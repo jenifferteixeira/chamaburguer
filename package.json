@@ -1,0 +1,32 @@
+{
+  "name": "chamaburguer",
+  "version": "1.0.0",
+  "description": "DevBurguer API",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": {
+    "name": "Jeniffer Teixeira",
+    "url": "https://github.com/jenifferteixeira"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "sequelize-cli": "^6.6.2",
+    "sucrase": "^3.35.0"
+  }
+}
