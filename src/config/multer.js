@@ -1,18 +1,19 @@
 import multer from "multer";
-import { v4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 import { extname, resolve } from 'path'
 
 
 
-export default {
-    storage: multer.diskStorage({
-        destination: resolve(__dirname, '..', '..', 'uploads'),
-        filename: (request, file, callback) => {
-            const fileExt = v4() + extname(file.originalname);
-            const fileName = `${Date.now()}${fileExt}`;
+const storage = multer.diskStorage({
+    destination: resolve(__dirname, '..', '..', 'uploads'),
+    filename: (request, file, callback) => {
+        const fileExt = extname(file.originalname);
+        const fileName = `${Date.now()}-${uuidv4()}${fileExt}`;
 
-            callback(null, fileName);
-        },
-    })
+        callback(null, fileName);
+    },
+});
 
-}
+const upload = multer({ storage });
+
+export default upload;

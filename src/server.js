@@ -1,3 +1,12 @@
 import app from './app'
 
-app.listen(3001, () => console.log('Server is running at port 3001.'))
+const port = 3001;
+
+app.listen(port, () => {
+    console.log(`Servidor está rodando na porta ${port}.`);
+}).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(`Porta ${port} já está sendo usada.`);
+        process.exit(1); // Finaliza o processo
+    }
+});
